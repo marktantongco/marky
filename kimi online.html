@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earning Online with Kimi AI: A Comprehensive Strategic Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #047857;
+            --primary-light: #059669;
+            --secondary: #78716c;
+            --accent: #d97706;
+            --background: #fafaf9;
+            --surface: #ffffff;
+            --text-primary: #1c1917;
+            --text-secondary: #57534e;
+            --border: #e7e5e4;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--background);
+            overflow-x: hidden;
+        }
+        
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .toc-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            z-index: 40;
+            overflow-y: auto;
+            padding: 2rem 1.5rem;
+        }
+        
+        .main-content {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(4, 120, 87, 0.05) 0%, rgba(217, 119, 6, 0.05) 100%);
+        }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .toc-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-left: 2px solid transparent;
+            padding-left: 1rem;
+            margin-left: -1rem;
+            transition: all 0.2s ease;
+        }
+        
+        .toc-link:hover {
+            color: var(--primary);
+            border-left-color: var(--primary);
+        }
+        
+        .toc-link.active {
+            color: var(--primary);
+            border-left-color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 4rem 0;
+        }
+        
+        .quote-highlight {
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .toc-fixed {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .toc-fixed.open {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .mermaid-control-btn:not(.reset-zoom) {
+                display: none;
+            }
+            .mermaid-controls {
+                top: auto;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        .citation {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .citation:hover {
+            text-decoration: underline;
+        }
+        
+        .strategy-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .strategy-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .progress-indicator {
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: var(--primary);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Mermaid chart styling */
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container.zoomed .mermaid {
+            height: 100%;
+            width: 100%;
+            cursor: grab;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .mermaid-control-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Mermaid theme customization for better contrast */
+        .mermaid .node rect,
+        .mermaid .node circle,
+        .mermaid .node ellipse,
+        .mermaid .node polygon {
+            stroke: #374151 !important;
+            stroke-width: 2px !important;
+        }
+        
+        /* Primary nodes - green theme */
+        .mermaid .node.primary rect,
+        .mermaid .node.primary circle,
+        .mermaid .node.primary ellipse,
+        .mermaid .node.primary polygon {
+            fill: #ecfdf5 !important;
+            stroke: #047857 !important;
+        }
+        
+        .mermaid .node.primary .label {
+            color: #047857 !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Secondary nodes - orange theme */
+        .mermaid .node.secondary rect,
+        .mermaid .node.secondary circle,
+        .mermaid .node.secondary ellipse,
+        .mermaid .node.secondary polygon {
+            fill: #fffbeb !important;
+            stroke: #d97706 !important;
+        }
+        
+        .mermaid .node.secondary .label {
+            color: #92400e !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Tertiary nodes - neutral theme */
+        .mermaid .node.tertiary rect,
+        .mermaid .node.tertiary circle,
+        .mermaid .node.tertiary ellipse,
+        .mermaid .node.tertiary polygon {
+            fill: #f8fafc !important;
+            stroke: #64748b !important;
+        }
+        
+        .mermaid .node.tertiary .label {
+            color: #374151 !important;
+            font-weight: 500 !important;
+        }
+        
+        /* Default node styling */
+        .mermaid .node .label {
+            color: #1f2937 !important;
+            font-weight: 500 !important;
+            font-size: 13px !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+        
+        /* Edge styling */
+        .mermaid .edgePath .path {
+            stroke: #6b7280 !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .edgeLabel {
+            background-color: #ffffff !important;
+            color: #374151 !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 12px !important;
+            font-weight: 500 !important;
+            padding: 4px 8px !important;
+            border-radius: 4px !important;
+            border: 1px solid #e5e7eb !important;
+        }
+        
+        /* Cluster styling */
+        .mermaid .cluster rect {
+            fill: #f9fafb !important;
+            stroke: #d1d5db !important;
+            stroke-width: 1px !important;
+        }
+        
+        .mermaid .cluster .label {
+            color: #374151 !important;
+            font-weight: 600 !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+    </style>
+  </head>
+
+  <body>
+    <!-- Table of Contents -->
+    <nav class="toc-fixed">
+      <div class="mb-8">
+        <h3 class="serif text-lg font-semibold text-gray-900 mb-4">Contents</h3>
+        <a href="#hero" class="toc-link active" data-section="hero">Introduction</a>
+        <a href="#freelance" class="toc-link" data-section="freelance">1. Freelance Writing & Content</a>
+        <a href="#affiliate" class="toc-link" data-section="affiliate">2. Affiliate Marketing</a>
+        <a href="#social" class="toc-link" data-section="social">3. Social Media Management</a>
+        <a href="#virtual" class="toc-link" data-section="virtual">4. Virtual Assistance</a>
+        <a href="#success" class="toc-link" data-section="success">5. Key Success Factors</a>
+      </div>
+
+      <div class="mt-8 pt-8 border-t border-gray-200">
+        <p class="text-xs text-gray-500 mb-2">Reading Progress</p>
+        <div class="progress-indicator">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section id="hero" class="hero-gradient min-h-screen flex items-center">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8 py-16">
+          <div class="bento-grid max-w-7xl mx-auto">
+            <!-- Left: Title and Intro -->
+            <div class="space-y-8">
+              <div class="space-y-4">
+                <h1 class="serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                  <span class="italic text-emerald-700">Earning Online</span>
+                  <br>
+                  with Kimi AI
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 font-light">
+                  A Strategic Guide for Newcomers to Digital Entrepreneurship
+                </p>
+              </div>
+
+              <div class="flex items-center space-x-4 text-sm text-gray-500">
+                <span><i class="fas fa-calendar-alt mr-2"></i>July 2025</span>
+                <span><i class="fas fa-clock mr-2"></i>15 min read</span>
+              </div>
+            </div>
+
+            <!-- Right: Key Highlights -->
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 md:p-8 border border-gray-200">
+              <h3 class="serif text-2xl font-semibold mb-6 text-gray-900">Strategic Pathways</h3>
+
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-emerald-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Enhance freelance writing and content creation capabilities</p>
+                </div>
+
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Streamline affiliate marketing campaigns and content production</p>
+                </div>
+
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-emerald-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Manage social media accounts with AI-powered efficiency</p>
+                </div>
+
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Offer advanced virtual assistance services</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="stats-grid mt-16 max-w-4xl mx-auto">
+            <div class="stat-card">
+              <span class="stat-number">4</span>
+              <p class="text-gray-600">Core Strategies</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">1.27B</span>
+              <p class="text-gray-600">Monthly Pinterest Users</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">20%</span>
+              <p class="text-gray-600">Potential Commission Rate</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Freelance Writing Section -->
+      <section id="freelance" class="py-16 px-4 sm:px-6 md:px-8">
+        <div class="max-w-4xl mx-auto">
+          <header class="mb-12">
+            <h2 class="serif text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              1. Leveraging Kimi AI for Freelance Writing
+            </h2>
+            <p class="text-xl text-gray-600 leading-relaxed">
+              Kimi AI presents a valuable tool for individuals entering the freelance writing market,
+              particularly those lacking extensive experience or large portfolios.
+            </p>
+          </header>
+
+          <div class="quote-highlight">
+            <p class="text-lg">
+              "While Kimi AI can assist with structure, grammar, and idea generation,
+              the most successful freelance writers will use it as an aid rather than
+              a complete replacement for human creativity and insight."
+            </p>
+          </div>
+
+          <div class="space-y-8">
+            <div class="strategy-card">
+              <h3 class="serif text-2xl font-semibold mb-4 text-gray-900">
+                <i class="fas fa-pen-fancy text-emerald-600 mr-3"></i>
+                Generating Blog Posts and Articles
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Kimi AI can be a powerful assistant for new freelance writers specializing in blog posts and articles.
+                The AI's ability to process information and generate text can help overcome writer's block,
+                speed up the drafting process, and ensure grammatical accuracy
+                <a href="https://dicloak.com/blog-detail/how-to-make-money-with-kimi-ai-in-2025-tutorial" class="citation">[56]</a>.
+              </p>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li>Research topics and generate comprehensive outlines</li>
+                <li>Create first drafts with appropriate tone and style</li>
+                <li>Break down complex information into digestible content</li>
+                <li>Ensure grammatical accuracy and structural integrity</li>
+              </ul>
+              <div class="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                <p class="text-sm text-amber-800">
+                  <strong>Critical Note:</strong> Core ideas and sentences should originate from the user
+                  to maintain authenticity <a href="https://dicloak.com/blog-detail/how-to-make-money-with-kimi-ai-in-2025-tutorial" class="citation">[56]</a>.
+                </p>
+              </div>
+            </div>
+
+            <div class="strategy-card">
+              <h3 class="serif text-2xl font-semibold mb-4 text-gray-900">
+                <i class="fas fa-video text-emerald-600 mr-3"></i>
+                Crafting Scripts for Videos and Podcasts
+              </h3>
+              <p class="text-gray-700 mb-4">
+                The demand for video and podcast content is continually growing, and Kimi AI can be
+                an invaluable asset for new freelancers looking to break into scriptwriting
+                <a href="https://dicloak.com/blog-detail/how-to-make-money-with-kimi-ai-in-2025-tutorial" class="citation">[56]</a>.
+              </p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-gray-900 mb-2">Video Script Features</h4>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• Structured introductions and conclusions</li>
+                    <li>• Natural transitions between segments</li>
+                    <li>• Conversational phrasing optimization</li>
+                    <li>• Platform-specific adaptations</li>
+                  </ul>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-gray-900 mb-2">Podcast Script Benefits</h4>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• Interview question development</li>
+                    <li>• Discussion structure planning</li>
+                    <li>• Narrative dialogue generation</li>
+                    <li>• Audience engagement techniques</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="strategy-card">
+              <h3 class="serif text-2xl font-semibold mb-4 text-gray-900">
+                <i class="fas fa-briefcase text-emerald-600 mr-3"></i>
+                Offering Services on Freelance Platforms
+              </h3>
+              <p class="text-gray-700 mb-4">
+                For newbies, freelance platforms like Upwork and Fiverr offer a gateway to finding clients
+                and building a portfolio. Kimi AI can significantly enhance a new freelancer's ability
+                to compete on these platforms.
+              </p>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                <h4 class="font-semibold text-emerald-900 mb-2">Platform Strategy</h4>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                  <div>
+                    <strong class="text-emerald-900">Portfolio Building:</strong>
+                    <p class="text-emerald-800">Generate diverse samples quickly</p>
+                  </div>
+                  <div>
+                    <strong class="text-emerald-900">Efficiency Boost:</strong>
+                    <p class="text-emerald-800">Handle multiple projects simultaneously</p>
+                  </div>
+                  <div>
+                    <strong class="text-emerald-900">Quality Assurance:</strong>
+                    <p class="text-emerald-800">Focus on editing and client satisfaction</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Affiliate Marketing Section -->
+      <section id="affiliate" class="py-16 px-4 sm:px-6 md:px-8 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+          <header class="mb-12">
+            <h2 class="serif text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              2. Monetizing Through Affiliate Marketing
+            </h2>
+            <p class="text-xl text-gray-600 leading-relaxed">
+              Affiliate marketing presents a viable online income stream for newbies, and Kimi AI can play
+              a crucial role in streamlining and enhancing various aspects of this business model.
+            </p>
+          </header>
+
+          <div class="space-y-8">
+            <div class="strategy-card">
+              <h3 class="serif text-2xl font-semibold mb-4 text-gray-900">
+                <i class="fas fa-magic text-amber-600 mr-3"></i>
+                Creating Compelling Affiliate Content
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Creating high-quality, engaging content is the backbone of any successful affiliate marketing strategy,
+                and Kimi AI can be a powerful tool for newbies to produce such content efficiently.
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                  <h4 class="font-semibold text-gray-900">Content Types</h4>
+                  <div class="space-y-3">
+                    <div class="flex items-start space-x-3">
+                      <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                      <div>
+                        <strong class="text-gray-900">Product Reviews</strong>
+                        <p class="text-sm text-gray-600">Detailed analysis and comparisons</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                      <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                      <div>
+                        <strong class="text-gray-900">How-To Guides</strong>
+                        <p class="text-sm text-gray-600">Step-by-step tutorials</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                      <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                      <div>
+                        <strong class="text-gray-900">Comparison Articles</strong>
+                        <p class="text-sm text-gray-600">Side-by-side product analysis</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                  <h4 class="font-semibold text-amber-900 mb-2">AI-Enhanced Features</h4>
+                  <ul class="text-sm text-amber-800 space-y-1">
+                    <li>• Automated research and fact-checking</li>
+                    <li>• SEO optimization suggestions</li>
+                    <li>• Multiple content variations</li>
+                    <li>• Tone and style adaptation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="strategy-card">
+              <h3 class="serif text-2xl font-semibold mb-4 text-gray-900">
+                <i class="fas fa-share-alt text-amber-600 mr-3"></i>
+                Promoting Products on Social Media
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Social media platforms are invaluable channels for promoting affiliate products, and Kimi AI
+                can significantly aid newbies in managing and optimizing their social media marketing efforts.
+                Platforms like Threads and Pinterest, which boasts over 1.27 billion monthly users,
+                offer vast audiences for affiliate promotions
+                <a href="https://dicloak.com/blog-detail/how-to-make-money-with-kimi-ai-in-2025-tutorial" class="citation">[56, 110]</a>.
+              </p>
+
+              <div class="grid md:grid-cols-3 gap-4 mb-6">
+                <div class="text-center p-4 bg-white border border-gray-200 rounded-lg">
+                  <i class="fab fa-pinterest text-red-500 text-3xl mb-2"></i>
+                  <h4 class="font-semibold text-gray-900">Pinterest</h4>
+                  <p class="text-sm text-gray-600">1.27B monthly users</p>
+                </div>
+                <div class="text-center p-4 bg-white border border-gray-200 rounded-lg">
+                  <i class="fas fa-comment text-gray-800 text-3xl mb-2"></i>
+                  <h4 class="font-semibold text-gray-900">Threads</h4>
+                  <p class="text-sm text-gray-600">Growing platform</p>
+                </div>
+                <div class="text-center p-4 bg-white border border-gray-200 rounded-lg">
+                  <i class="fas fa-chart-line text-blue-500 text-3xl mb-2"></i>
+                  <h4 class="font-semibold text-gray-900">Analytics</h4>
+                  <p class="text-sm text-gray-600">A/B Testing</p>
+                </div>
+              </div>
+
+              <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <h4 class="font-semibold text-blue-900 mb-2">Social Media Strategy</h4>
+                <p class="text-blue-800 text-sm">
+                  Kimi AI can help draft multiple variations of ad copy for A/B testing to see what resonates best
+                  with the audience <a href="https://dicloak.com/blog-detail/how-to-make-money-with-kimi-ai-in-2025-tutorial" class="citation">[56, 110]</a>.
+                </p>
+              </div>
+            </div>
+
+            <div class="strategy-card">
+              <h3 class="serif text-2xl font-semibold mb-4 text-gray-900">
+                <i class="fas fa-link text-amber-600 mr-3"></i>
+                Joining Kimi AI's Affiliate Program
+              </h3>
+              <p class="text-gray-700 mb-4">
+                While specific details about Kimi AI's official affiliate program weren't confirmed in research,
+                the general principle of affiliate marketing can still be applied to Kimi AI in an indirect way.
+              </p>
+
+              <div class="bg-gray-100 border border-gray-300 rounded-lg p-6">
+                <h4 class="font-semibold text-gray-900 mb-4">Indirect Monetization Strategies</h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h5 class="font-medium text-gray-900 mb-2">Content Creation</h5>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                      <li>• Tutorial videos and guides</li>
+                      <li>• Case studies and success stories</li>
+                      <li>• Feature reviews and comparisons</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="font-medium text-gray-900 mb-2">Monetization Methods</h5>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                      <li>• Advertising revenue</li>
+                      <li>• Sponsored content</li>
+                      <li>• Related tool promotions</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Social Media Management Section -->
+      <section id="social" class="py-16 px-4 sm:px-6 md:px-8">
+        <div class="max-w-4xl mx-auto">
+          <header class="mb-12">
+            <h2 class="serif text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              3. Utilizing Kimi AI for Social Media Management
+            </h2>
+            <p class="text-xl text-gray-600 leading-relaxed">
+              Kimi AI's capabilities extend beyond content creation and can be effectively utilized by newbies
+              to offer comprehensive social media management services.
+            </p>
+          </header>
+
+          <div class="space-y-8">
+            <div class="strategy-card">
+              <h3 class="serif text-2xl font-semibold mb-4 text-gray-900">
+                <i class="fas fa-hashtag text-emerald-600 mr-3"></i>
+                Generating Engaging Social Media Posts
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Consistently creating fresh and engaging social media posts is a significant challenge for
+                many businesses, and this is where Kimi AI can be a game-changer for new social media managers.
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                  <h4 class="font-semibold text-gray-900">Content Ideation</h4>
+                  <div class="space-y-3">
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                      <strong class="text-emerald-900">Motivational Monday</strong>
+                      <p class="text-sm text-emerald-800">Inspirational quotes and stories</p>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                      <strong class="text-emerald-900">Workout Wednesday</strong>
+                      <p class="text-sm text-emerald-800">Fitness tips and routines</p>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                      <strong class="text-emerald-900">Success Story Friday</strong>
+                      <p class="text-sm text-emerald-800">Client achievements and testimonials</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="space-y-4">
+                  <h4 class="font-semibold text-gray-900">Platform Optimization</h4>
+                  <div class="space-y-3">
+                    <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                      <i class="fab fa-linkedin text-blue-600"></i>
+                      <div>
+                        <strong class="text-gray-900">LinkedIn</strong>
+                        <p class="text-sm text-gray-600">Professional, long-form content</p>
+                      </div>
+                    </div>
+                    <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                      <i class="fab fa-instagram text-pink-600"></i>
+                      <div>
+                        <strong class="text-gray-900">Instagram</strong>
+                        <p class="text-sm text-gray-600">Visual-focused, concise captions</p>
+                      </div>
+                    </div>
+                    <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                      <i class="fab fa-twitter text-blue-400"></i>
+                      <div>
+                        <strong class="text-gray-900">Twitter</strong>
+                        <p class="text-sm text-gray-600">Snappy, engaging updates</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="strategy-card">
+              <h3 class="serif text-2xl font-semibold mb-4 text-gray-900">
+                <i class="fas fa-users text-emerald-600 mr-3"></i>
+                Interacting with Followers and Building Community
+              </h3>
+              <p class="text-gray-700 mb-4">
+                While Kimi AI can significantly aid in content generation, building a genuine community on
+                social media also requires active interaction with followers. Human oversight remains crucial.
+              </p>
+
+              <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                <h4 class="font-semibold text-yellow-900 mb-4">
+                  <i class="fas fa-exclamation-triangle mr-2"></i>
+                  Human Oversight Required
+                </h4>
+                <p class="text-yellow-800 mb-4">
+                  All AI-generated interactions must be carefully reviewed and personalized by the
+                  social media manager before posting. Authentic, human-like engagement is key to
+                  building trust and fostering a loyal community.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-4">
+                  <div class="text-center">
+                    <i class="fas fa-comments text-yellow-600 text-2xl mb-2"></i>
+                    <h5 class="font-medium text-yellow-900">Response Drafting</h5>
+                    <p class="text-sm text-yellow-800">AI-assisted comment replies</p>
+                  </div>
+                  <div class="text-center">
+                    <i class="fas fa-search text-yellow-600 text-2xl mb-2"></i>
+                    <h5 class="font-medium text-yellow-900">Brand Monitoring</h5>
+                    <p class="text-sm text-yellow-800">Mention tracking and alerts</p>
+                  </div>
+                  <div class="text-center">
+                    <i class="fas fa-handshake text-yellow-600 text-2xl mb-2"></i>
+                    <h5 class="font-medium text-yellow-900">Community Building</h5>
+                    <p class="text-sm text-yellow-800">Trending conversation participation</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Virtual Assistance Section -->
+      <section id="virtual" class="py-16 px-4 sm:px-6 md:px-8 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+          <header class="mb-12">
+            <h2 class="serif text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              4. Offering Virtual Assistance Services Enhanced by Kimi AI
+            </h2>
+            <p class="text-xl text-gray-600 leading-relaxed">
+              The role of a virtual assistant has evolved significantly with AI tools, and Kimi AI can be
+              a powerful asset for newbies looking to offer VA services with enhanced capabilities.
+            </p>
+          </header>
+
+          <div class="space-y-8">
+            <div class="strategy-card">
+              <h3 class="serif text-2xl font-semibold mb-4 text-gray-900">
+                <i class="fas fa-cogs text-amber-600 mr-3"></i>
+                Automating Administrative Tasks
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Administrative tasks are a core component of virtual assistance, and Kimi AI can help
+                new VAs automate or streamline many of these routine activities, freeing up time for
+                more complex and value-added work.
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                  <h4 class="font-semibold text-gray-900">Task Automation</h4>
+                  <div class="space-y-3">
+                    <div class="flex items-start space-x-3">
+                      <i class="fas fa-envelope text-blue-500 mt-1"></i>
+                      <div>
+                        <strong class="text-gray-900">Email Management</strong>
+                        <ul class="text-sm text-gray-600 mt-1 space-y-1">
+                          <li>• Draft responses to common inquiries</li>
+                          <li>• Sort and prioritize emails</li>
+                          <li>• Summarize lengthy threads</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                      <i class="fas fa-calendar text-green-500 mt-1"></i>
+                      <div>
+                        <strong class="text-gray-900">Scheduling</strong>
+                        <ul class="text-sm text-gray-600 mt-1 space-y-1">
+                          <li>• Analyze calendar availability</li>
+                          <li>• Draft meeting invitations</li>
+                          <li>• Send automated reminders</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="space-y-4">
+                  <h4 class="font-semibold text-gray-900">Data Processing</h4>
+                  <div class="space-y-3">
+                    <div class="flex items-start space-x-3">
+                      <i class="fas fa-table text-purple-500 mt-1"></i>
+                      <div>
+                        <strong class="text-gray-900">Data Entry Support</strong>
+                        <ul class="text-sm text-gray-600 mt-1 space-y-1">
+                          <li>• Extract information from documents</li>
+                          <li>• Format data consistently</li>
+                          <li>• Identify inconsistencies</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                      <i class="fas fa-search text-orange-500 mt-1"></i>
+                      <div>
+                        <strong class="text-gray-900">Research Tasks</strong>
+                        <ul class="text-sm text-gray-600 mt-1 space-y-1">
+                          <li>• Find contact information</li>
+                          <li>• Compare service providers</li>
+                          <li>• Gather market data</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="strategy-card">
+              <h3 class="serif text-2xl font-semibold mb-4 text-gray-900">
+                <i class="fas fa-brain text-amber-600 mr-3"></i>
+                Enhancing Communication and Research Capabilities
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Effective communication and thorough research are critical skills for any virtual assistant,
+                and Kimi AI can significantly enhance these capabilities for newbies entering the field.
+              </p>
+
+              <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                <h4 class="font-semibold text-blue-900 mb-3">Natural Language Processing Benefits</h4>
+                <p class="text-blue-800 text-sm mb-3">
+                  Kimi AI's natural language processing allows it to understand and generate human-like text,
+                  which can be leveraged for drafting clear and professional communications.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <strong class="text-blue-900">Communication Enhancement:</strong>
+                    <ul class="text-sm text-blue-800 mt-1 space-y-1">
+                      <li>• Professional email drafting</li>
+                      <li>• Client report generation</li>
+                      <li>• Presentation content creation</li>
+                      <li>• Tone and style refinement</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <strong class="text-blue-900">Research Capabilities:</strong>
+                    <ul class="text-sm text-blue-800 mt-1 space-y-1">
+                      <li>• Competitor analysis</li>
+                      <li>• Market trend identification</li>
+                      <li>• Information summarization</li>
+                      <li>• Multilingual support</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="quote-highlight">
+                <p class="text-base">
+                  Kimi AI's ability to quickly scan and summarize large volumes of information from the web
+                  or uploaded documents is a major advantage
+                  <a href="https://www.linkedin.com/pulse/kimi-ai-startups-step-by-step-guide-why-its-better-than-chatgpt-hrujf" class="citation">[97]</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Success Factors Section -->
+      <section id="success" class="py-16 px-4 sm:px-6 md:px-8">
+        <div class="max-w-4xl mx-auto">
+          <header class="mb-12">
+            <h2 class="serif text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              5. Key Tips for Success as a Newbie
+            </h2>
+            <p class="text-xl text-gray-600 leading-relaxed">
+              Embarking on an online earning journey with AI tools requires strategic planning,
+              continuous improvement, and adherence to best practices.
+            </p>
+          </header>
+
+          <div class="space-y-8">
+            <div class="strategy-card">
+              <h3 class="serif text-2xl font-semibold mb-4 text-gray-900">
+                <i class="fas fa-seedling text-emerald-600 mr-3"></i>
+                Starting Small and Scaling Gradually
+              </h3>
+              <p class="text-gray-700 mb-4">
+                For newbies venturing into online earning with Kimi AI, a crucial strategy for long-term
+                success is to start small and scale efforts gradually.
+              </p>
+
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center p-6 bg-emerald-50 border border-emerald-200 rounded-lg">
+                  <i class="fas fa-target text-emerald-600 text-3xl mb-4"></i>
+                  <h4 class="font-semibold text-emerald-900 mb-2">Focus Areas</h4>
+                  <p class="text-sm text-emerald-800">
+                    Start with 1-2 areas where Kimi AI provides maximum leverage
+                  </p>
+                </div>
+                <div class="text-center p-6 bg-amber-50 border border-amber-200 rounded-lg">
+                  <i class="fas fa-chart-line text-amber-600 text-3xl mb-4"></i>
+                  <h4 class="font-semibold text-amber-900 mb-2">Progressive Scaling</h4>
+                  <p class="text-sm text-amber-800">
+                    Gradually increase rates and project complexity
+                  </p>
+                </div>
+                <div class="text-center p-6 bg-blue-50 border border-blue-200 rounded-lg">
+                  <i class="fas fa-shield-alt text-blue-600 text-3xl mb-4"></i>
+                  <h4 class="font-semibold text-blue-900 mb-2">Risk Management</h4>
+                  <p class="text-sm text-blue-800">
+                    Manage learning curve effectively while building sustainably
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="strategy-card">
+              <h3 class="serif text-2xl font-semibold mb-4 text-gray-900">
+                <i class="fas fa-graduation-cap text-emerald-600 mr-3"></i>
+                Continuous Learning and Skill Development
+              </h3>
+              <p class="text-gray-700 mb-4">
+                The field of AI is rapidly evolving, and online earning methods are constantly changing,
+                making continuous learning and skill development essential for newbies using tools like Kimi AI.
+              </p>
+
+              <div class="bg-gradient-to-r from-emerald-50 to-blue-50 border border-emerald-200 rounded-lg p-6">
+                <h4 class="font-semibold text-gray-900 mb-4">Learning Priorities</h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h5 class="font-medium text-gray-900 mb-3">
+                      <i class="fas fa-robot text-emerald-600 mr-2"></i>
+                      AI Tool Mastery
+                    </h5>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                      <li>• Stay updated on Kimi AI features</li>
+                      <li>• Learn advanced prompt engineering</li>
+                      <li>• Understand integration capabilities</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="font-medium text-gray-900 mb-3">
+                      <i class="fas fa-industry text-blue-600 mr-2"></i>
+                      Industry Knowledge
+                    </h5>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                      <li>• Follow industry trends and best practices</li>
+                      <li>• Learn SEO and marketing strategies</li>
+                      <li>• Analyze successful practitioners</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="strategy-card">
+              <h3 class="serif text-2xl font-semibold mb-4 text-gray-900">
+                <i class="fas fa-balance-scale text-emerald-600 mr-3"></i>
+                Adhering to Platform Guidelines and Best Practices
+              </h3>
+              <p class="text-gray-700 mb-4">
+                When using Kimi AI to earn online, especially on third-party platforms, it is paramount
+                for newbies to strictly adhere to specific guidelines and best practices.
+              </p>
+
+              <div class="bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
+                <h4 class="font-semibold text-red-900 mb-3">
+                  <i class="fas fa-exclamation-circle mr-2"></i>
+                  Critical Compliance Requirements
+                </h4>
+                <p class="text-red-800 text-sm mb-3">
+                  Ignoring platform guidelines can lead to account suspension, loss of earnings,
+                  or damage to one's reputation.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <strong class="text-red-900">Platform Rules:</strong>
+                    <ul class="text-sm text-red-800 mt-1 space-y-1">
+                      <li>• AI usage disclosure requirements</li>
+                      <li>• Content authenticity policies</li>
+                      <li>• Spam prevention measures</li>
+                      <li>• Ethical conduct standards</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <strong class="text-red-900">Best Practices:</strong>
+                    <ul class="text-sm text-red-800 mt-1 space-y-1">
+                      <li>• Client transparency</li>
+                      <li>• Quality work delivery</li>
+                      <li>• Intellectual property respect</li>
+                      <li>• Professional interactions</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                <p class="text-green-800 text-sm">
+                  <strong>Success Formula:</strong> Patience and persistence are key, as building a reliable
+                  online income stream often takes time and consistent effort.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Success Pathway Diagram -->
+          <div class="mt-16">
+            <h3 class="serif text-2xl font-semibold mb-6 text-center text-gray-900">Success Pathway with Kimi AI</h3>
+            <div class="mermaid-container">
+              <div class="mermaid-controls">
+                <button class="mermaid-control-btn zoom-in" title="放大">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+                <button class="mermaid-control-btn zoom-out" title="缩小">
+                  <i class="fas fa-search-minus"></i>
+                </button>
+                <button class="mermaid-control-btn reset-zoom" title="重置">
+                  <i class="fas fa-expand-arrows-alt"></i>
+                </button>
+                <button class="mermaid-control-btn fullscreen" title="全屏查看">
+                  <i class="fas fa-expand"></i>
+                </button>
+              </div>
+              <div class="mermaid" id="success-diagram">
+                graph TD
+                A["Start Small
+                <br />Choose 1-2 Focus Areas"] --> B["Learn Kimi AI
+                <br />Features & Capabilities"]
+                B --> C["Build Portfolio
+                <br />with AI Assistance"]
+                C --> D["First Clients
+                <br />Deliver Quality Work"]
+                D --> E["Continuous Learning
+                <br />Skill Enhancement"]
+                E --> F["Scale Gradually
+                <br />Increase Rates/Projects"]
+                F --> G["Diversify Services
+                <br />Expand Income Streams"]
+                G --> H["Sustainable
+                <br />Online Business"]
+
+                classDef primary fill:#ecfdf5,stroke:#047857,stroke-width:3px,color:#047857
+                classDef secondary fill:#fffbeb,stroke:#d97706,stroke-width:2px,color:#92400e
+                classDef tertiary fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#374151
+
+                class A,D,H primary
+                class B,E secondary
+                class C,F,G tertiary
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white py-12 px-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <h3 class="serif text-2xl font-semibold mb-6">Begin Your AI-Powered Journey</h3>
+          <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+            Success in online earning with Kimi AI requires strategic planning, continuous learning,
+            and authentic value creation. Start small, scale smart, and maintain ethical standards.
+          </p>
+
+          <div class="flex justify-center space-x-6 text-sm text-gray-400">
+            <span><i class="fas fa-calendar mr-2"></i>July 2025</span>
+            <span><i class="fas fa-clock mr-2"></i>Strategic Guide</span>
+            <span><i class="fas fa-globe mr-2"></i>Digital Entrepreneurship</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+        // Initialize Mermaid with custom configuration
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#ecfdf5',
+                primaryTextColor: '#047857',
+                primaryBorderColor: '#047857',
+                lineColor: '#6b7280',
+                secondaryColor: '#fffbeb',
+                tertiaryColor: '#f8fafc',
+                background: '#ffffff',
+                mainBkg: '#ffffff',
+                secondaryBkg: '#f8fafc',
+                tertiaryBkg: '#f1f5f9',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '13px'
+            },
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true,
+                curve: 'basis',
+                padding: 20
+            }
+        });
+
+        // Initialize Mermaid Controls for zoom and pan
+        function initializeMermaidControls() {
+            const containers = document.querySelectorAll('.mermaid-container');
+
+            containers.forEach(container => {
+            const mermaidElement = container.querySelector('.mermaid');
+            let scale = 1;
+            let isDragging = false;
+            let startX, startY, translateX = 0, translateY = 0;
+
+            // 触摸相关状态
+            let isTouch = false;
+            let touchStartTime = 0;
+            let initialDistance = 0;
+            let initialScale = 1;
+            let isPinching = false;
+
+            // Zoom controls
+            const zoomInBtn = container.querySelector('.zoom-in');
+            const zoomOutBtn = container.querySelector('.zoom-out');
+            const resetBtn = container.querySelector('.reset-zoom');
+            const fullscreenBtn = container.querySelector('.fullscreen');
+
+            function updateTransform() {
+                mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+                if (scale > 1) {
+                container.classList.add('zoomed');
+                } else {
+                container.classList.remove('zoomed');
+                }
+
+                mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
+            }
+
+            if (zoomInBtn) {
+                zoomInBtn.addEventListener('click', () => {
+                scale = Math.min(scale * 1.25, 4);
+                updateTransform();
+                });
+            }
+
+            if (zoomOutBtn) {
+                zoomOutBtn.addEventListener('click', () => {
+                scale = Math.max(scale / 1.25, 0.3);
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+                updateTransform();
+                });
+            }
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+                });
+            }
+
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', () => {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+                });
+            }
+
+            // Mouse Events
+            mermaidElement.addEventListener('mousedown', (e) => {
+                if (isTouch) return; // 如果是触摸设备，忽略鼠标事件
+
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                mermaidElement.style.cursor = 'grabbing';
+                updateTransform();
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging && !isTouch) {
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseleave', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            // 获取两点之间的距离
+            function getTouchDistance(touch1, touch2) {
+                return Math.hypot(
+                touch2.clientX - touch1.clientX,
+                touch2.clientY - touch1.clientY
+                );
+            }
+
+            // Touch Events - 触摸事件处理
+            mermaidElement.addEventListener('touchstart', (e) => {
+                isTouch = true;
+                touchStartTime = Date.now();
+
+                if (e.touches.length === 1) {
+                // 单指拖动
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+
+                } else if (e.touches.length === 2) {
+                // 双指缩放
+                isPinching = true;
+                isDragging = false;
+
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                initialDistance = getTouchDistance(touch1, touch2);
+                initialScale = scale;
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 1 && isDragging && !isPinching) {
+                // 单指拖动
+                const touch = e.touches[0];
+                translateX = touch.clientX - startX;
+                translateY = touch.clientY - startY;
+                updateTransform();
+
+                } else if (e.touches.length === 2 && isPinching) {
+                // 双指缩放
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                const currentDistance = getTouchDistance(touch1, touch2);
+
+                if (initialDistance > 0) {
+                    const newScale = Math.min(Math.max(
+                    initialScale * (currentDistance / initialDistance),
+                    0.3
+                    ), 4);
+                    scale = newScale;
+                    updateTransform();
+                }
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchend', (e) => {
+                // 重置状态
+                if (e.touches.length === 0) {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                // 延迟重置isTouch，避免鼠标事件立即触发
+                setTimeout(() => {
+                    isTouch = false;
+                }, 100);
+                } else if (e.touches.length === 1 && isPinching) {
+                // 从双指变为单指，切换为拖动模式
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+                }
+
+                updateTransform();
+            });
+
+            mermaidElement.addEventListener('touchcancel', (e) => {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                setTimeout(() => {
+                isTouch = false;
+                }, 100);
+
+                updateTransform();
+            });
+
+            // Enhanced wheel zoom with better center point handling
+            container.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const rect = container.getBoundingClientRect();
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                const newScale = Math.min(Math.max(scale * delta, 0.3), 4);
+
+                // Adjust translation to zoom towards center
+                if (newScale !== scale) {
+                const scaleDiff = newScale / scale;
+                translateX = translateX * scaleDiff;
+                translateY = translateY * scaleDiff;
+                scale = newScale;
+
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+
+                updateTransform();
+                }
+            });
+
+            // Initialize display
+            updateTransform();
+            });
+        }
+
+        // Initialize Mermaid with custom configuration
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#ecfdf5',
+                primaryTextColor: '#047857',
+                primaryBorderColor: '#047857',
+                lineColor: '#6b7280',
+                secondaryColor: '#fffbeb',
+                tertiaryColor: '#f8fafc',
+                background: '#ffffff',
+                mainBkg: '#ffffff',
+                secondaryBkg: '#f8fafc',
+                tertiaryBkg: '#f1f5f9',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '13px'
+            },
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true,
+                curve: 'basis',
+                padding: 20
+            }
+        });
+
+        // Initialize controls after mermaid renders
+        setTimeout(initializeMermaidControls, 1000);
+
+        // Table of Contents functionality
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = document.querySelectorAll('section[id]');
+        const progressBar = document.getElementById('progress-bar');
+        
+        // Smooth scrolling for TOC links
+        tocLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Update active TOC link based on scroll position
+        function updateActiveTocLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Update progress bar
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollTop = window.scrollY;
+            const progress = (scrollTop / scrollHeight) * 100;
+            progressBar.style.width = progress + '%';
+        }
+        
+        // Throttled scroll event listener
+        let ticking = false;
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    updateActiveTocLink();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', onScroll);
+        
+        // Mobile TOC toggle (for responsive design)
+        const tocToggle = document.createElement('button');
+        tocToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        tocToggle.className = 'fixed top-4 left-4 z-50 bg-white p-3 rounded-lg shadow-lg md:hidden';
+        tocToggle.addEventListener('click', () => {
+            document.querySelector('.toc-fixed').classList.toggle('open');
+        });
+        document.body.appendChild(tocToggle);
+        
+        // Close TOC when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            const toc = document.querySelector('.toc-fixed');
+            if (window.innerWidth <= 768 && toc.classList.contains('open') && 
+                !toc.contains(e.target) && e.target !== tocToggle) {
+                toc.classList.remove('open');
+            }
+        });
+        
+        // Initialize on load
+        updateActiveTocLink();
+        
+        // Add fade-in animation for strategy cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.strategy-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+  </body>
+
+  </html>
